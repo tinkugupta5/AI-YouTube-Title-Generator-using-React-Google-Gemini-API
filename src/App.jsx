@@ -8,17 +8,14 @@ const App = () => {
 
  
   const apiKey = import.meta.env.VITE_GEMINI_API_KEY; // Use process.env.REACT_APP_GEMINI_API_KEY for Create React App
-
   const generateTitles = async () => {
     if (!keywords.trim()) {
-      alert("Please enter some keywords!");
+      alert("Please enter some keywords");
       return;
     }
 
     setLoading(true);
     try {
-      // console.log("API Key:", apiKey); // Debugging API Key
-
       const response = await axios.post(
         `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
         {
@@ -30,9 +27,7 @@ const App = () => {
           ],
         }
       );
-
       console.log("Response Data:", response.data); // Debugging Response
-
       const candidates = response.data.candidates || [];
       const titles = candidates.map((c) => c.content.parts[0].text);
       setGeneratedTitles(titles);
