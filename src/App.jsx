@@ -10,7 +10,7 @@ const App = () => {
   const apiKey = import.meta.env.VITE_GEMINI_API_KEY; // Use process.env.REACT_APP_GEMINI_API_KEY for Create React App
   const generateTitles = async () => {
     if (!keywords.trim()) {
-      alert("Please enter some keywords");
+      alert("Please enter some keyword");
       return;
     }
 
