@@ -22,7 +22,7 @@ const App = () => {
           contents: [
             {
               role: "user",
-              parts: [{ text: `Generate 5 catchy YouTube video titles related to: ${keywords}` }],
+              parts: [{ text: `Generate 5 catchy YouTube video titles related to: ${keywords}`}],
             },
           ],
         }
